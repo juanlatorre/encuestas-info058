@@ -1,17 +1,23 @@
+<?php 
+if (isset($_POST['encuesta'])) {
+	echo "formulario enviado";
+}
+?>
+
 <!doctype html>
 <html lang="es">
 	<head>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
 
-    	<title>Encuesta LAMS INFO-058</title>
+		<title>Encuesta LAMS INFO-058</title>
   	</head>
   	<body>
 		<div class="container pb-4">
-		    <h1 class="pt-4 pb-4">Encuesta LAMS INFO-058</h1>			
-			<form>
+			<h1 class="pt-4 pb-4">Encuesta LAMS INFO-058</h1>			
+			<form method="post" name="encuesta">
 				<h5>I. Utilidad y satisfacción con los recursos proporcionados por la Universidad.</h5>
 				<h6 class="pt-2"><u>Utilidad</u></h6>
 				<p>1. Indique qué aplicaciones informáticas y plataformas de la Universidad Austral de Chile utiliza: Ordénelas por prioridad.<br>Ejemplo: Siveduc, InfoAlumnos, LAMS, entre otros.</p>
@@ -28,8 +34,8 @@
 			  	</div>
 				
 				<div class="form-group">
-				    <p>2. Indique qué problemas se ha encontrado al utilizar/poner en marcha alguno de estos recursos:</p>
-				    <textarea class="form-control" id="p2" name="p2" rows="3"></textarea>
+					<p>2. Indique qué problemas se ha encontrado al utilizar/poner en marcha alguno de estos recursos:</p>
+					<textarea class="form-control" id="p2" name="p2" rows="3"></textarea>
 				</div>	
 				
 				<p>3. La utilidad general de los recursos informático que me han facilitado desde la Universidad es adecuada.</p>
@@ -155,8 +161,8 @@
 				</div>
 				
 				<div class="form-group">
-				    <p>8. Por favor, explique cuál es su satisfacción general con la plataforma LAMS o realice cualquier comentario que considere de interés con relación con esta plataforma. <span class="text-danger">(opcional)</span></p>
-				    <textarea class="form-control" id="p8" name="p8" rows="3"></textarea>
+					<p>8. Por favor, explique cuál es su satisfacción general con la plataforma LAMS o realice cualquier comentario que considere de interés con relación con esta plataforma. <span class="text-danger">(opcional)</span></p>
+					<textarea class="form-control" id="p8" name="p8" rows="3"></textarea>
 				</div>
 				
 				<h5>II. Evaluación de la calidad de la plataforma LAMS.</h5>
@@ -576,28 +582,28 @@
 				<h5>IV. Sugerencias para mejorar el curso virtual.</h5>
 				
 				<div class="form-group">
-				    <label for="sugerencia-calidad">Sugerencias para mejorar de la calidad general del curso en LAMS:</label>
-				    <textarea class="form-control" id="sugerencia-calidad" name="sugerencia-calidad" rows="3"></textarea>
+					<label for="sugerencia-calidad">Sugerencias para mejorar de la calidad general del curso en LAMS:</label>
+					<textarea class="form-control" id="sugerencia-calidad" name="sugerencia-calidad" rows="3"></textarea>
 				</div>
 				  
 				<div class="form-group">
-				    <label for="sugerencia-metodologica">Sugerencias para mejora la metodológica del curso:</label>
-				    <textarea class="form-control" id="sugerencia-metodologica" name="sugerencia-metodologica" rows="3"></textarea>
+					<label for="sugerencia-metodologica">Sugerencias para mejora la metodológica del curso:</label>
+					<textarea class="form-control" id="sugerencia-metodologica" name="sugerencia-metodologica" rows="3"></textarea>
 				</div>
 					
 				<div class="form-group">
-				    <label for="sugerencia-otros">Otros comentarios:</label>
-				    <textarea class="form-control" id="sugerencia-otros" name="sugerencia-otros" rows="3"></textarea>
+					<label for="sugerencia-otros">Otros comentarios:</label>
+					<textarea class="form-control" id="sugerencia-otros" name="sugerencia-otros" rows="3"></textarea>
 				</div>
 				
 				<div class="text-center">
-					<button type="submit" class="btn btn-info">Finalizar</button>
+					<button name="encuesta" type="submit" class="btn btn-info">Finalizar</button>
 				</div>
 			</form>	
 			
 		</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
