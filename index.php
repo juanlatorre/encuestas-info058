@@ -13,30 +13,43 @@
 		include_once('config.php');
 		$query = mysqli_query($db, "SELECT * FROM alumnos");
 
-		if (isset($_POST['login'])) {
-			$rut 	 = $_POST['rut'];
-			$clave 	 = md5($_POST['clave']);
+		session_start();
 
-			$query = "SELECT * FROM alumnos WHERE rut='$rut' and clave='$clave'";
-			$result = mysqli_query($db, $query);
-			$count = mysqli_num_rows($result);
-
-			if ($count > 0) {
-				$result = mysqli_fetch_assoc(mysqli_query($db, $query));
-				echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-				Ingreso correcto, te estamos redirigiendo a la encuesta...
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  </div>';
-				header("Location: encuesta.php");
-			} else {
-				echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				<strong>Ups!</strong> Revisa de nuevo tu rut o clave, si el problema persiste contáctate con un profesor.
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  </div>';
+		if((isset($_COOKIE['alumno']) && $_COOKIE['alumno'] != '') || (isset($_SESSION['alumno']) && $_SESSION['alumno'] !='')) {
+			header("Location: encuesta.php");
+		} else {
+			if (isset($_POST['login'])) {
+				$rut 	 = $_POST['rut'];
+				$clave 	 = $_POST['clave'];
+	
+				$query = "SELECT * FROM alumnos WHERE rut='$rut' and clave='$clave'";
+				$result = mysqli_query($db, $query);
+				$count = mysqli_num_rows($result);
+	
+				if ($count > 0) {
+					$result = mysqli_fetch_assoc(mysqli_query($db, $query));
+					$id = $result['rut'];
+					$cookie_name = "alumno";
+					$cookie_value = $id;
+					// calculo de tiempo: 86400 = 1 día (86400*30 = 1 Mes)
+					$expiry = time() + (3600);
+					session_start();
+					$_SESSION['alumno'] = $id;
+					echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+					Ingreso correcto, te estamos redirigiendo a la encuesta...
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>';
+					header("Location: encuesta.php");
+				} else {
+					echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<strong>Ups!</strong> Revisa de nuevo tu rut o clave, si el problema persiste contáctate con un profesor.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>';
+				}
 			}
 		}
 		?>
@@ -112,3 +125,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+$mysqli->close();
+?>
