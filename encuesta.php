@@ -9,10 +9,19 @@
 		<title>Encuesta LAMS INFO-058</title>
   	</head>
   	<body>
+		<nav class="navbar navbar-light bg-light">
+			<a class="btn btn-sm btn-outline-secondary ml-auto" role="button" href="logout.php">Cerrar Sesión</a>
+		</nav>
 		<?php 
 		include_once('config.php');
 
 		session_start();
+
+		if((isset($_COOKIE['alumno']) && $_COOKIE['alumno'] != '') || (isset($_SESSION['alumno']) && $_SESSION['alumno'] !='')) {
+			null;
+		} else {
+			header("Location: index.php");
+		}
 
 		$rut = $_SESSION['alumno'];
 
@@ -81,7 +90,6 @@
 		}
 		?>
 		<div class="container pb-4">
-			<a href="logout.php">salir</a>
 			<h1 class="pt-4 pb-4">Encuesta LAMS INFO-058 <br><small class="text-success">Bienvenido, <?php echo $rut; ?></small></h1>
 			<form method="post" name="encuesta">
 				<h5>I. Utilidad y satisfacción con los recursos proporcionados por la Universidad.</h5>

@@ -8,7 +8,10 @@
 
 		<title>Encuesta LAMS INFO-058</title>
   	</head>
-  	<body>
+	<body>
+		<nav class="navbar navbar-light bg-light">
+			<a class="btn btn-sm btn-outline-secondary ml-auto" role="button" href="login_admin.php">Administración</a>
+		</nav>
 		<?php
 		include_once('config.php');
 		$query = mysqli_query($db, "SELECT * FROM alumnos");
@@ -33,6 +36,7 @@
 					$cookie_value = $id;
 					// calculo de tiempo: 86400 = 1 día (86400*30 = 1 Mes)
 					$expiry = time() + (3600);
+					setcookie($cookie_name, $cookie_value, $expiry);
 					session_start();
 					$_SESSION['alumno'] = $id;
 					echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
