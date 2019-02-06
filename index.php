@@ -59,45 +59,46 @@
 		?>
 		<div class="container pb-4">
 			<h1 class="pt-4">Bienvenidos</h1>
-			<p>Análisis del uso de la Plataforma LAMS en el curso INFO058 Programación, del segundo semestre del año académico 2018.</p>
+			<h5>Análisis del uso de la Plataforma LAMS en el curso INFO058 Programación, del segundo semestre del año académico 2018.</h5>
 	
-			<p><strong>Instrucciones para su administración</strong>. Antes de responder al cuestionario lea atentamente las siguientes instrucciones.</p>
+			<p>Antes de responder al cuestionario lea atentamente las siguientes instrucciones.</p>
 	
-			<p><strong>1. Objetivo de este cuestionario:</strong><br>Conocer su opinión acerca de la plataforma LAMS que se ha puesto a su disposición, como apoyo al curso INFO058 Programación. La primera parte del cuestionario recoge su opinión relativa a la satisfacción y utilidad y la segunda parte, tiene como objetivo evaluar la calidad de los recursos.</p>
-	
-			<p>
-				<strong>2. Destinatarios:</strong><br>
-				Está dirigido a los estudiantes de las diversas carreras de la Facultad de Ciencias de la Ingeniería de la Universidad Austral de Chile, que cursan la asignatura INFO058 Programación.
-			</p>
+			<p>El objetivo de este cuestionario es conocer su opinión acerca de la plataforma LAMS que se ha puesto a su disposición, como apoyo al curso INFO058 Programación. La primera parte del cuestionario recoge su opinión relativa a la satisfacción y utilidad y la segunda parte, tiene como objetivo evaluar la calidad de los recursos.</p>
 			
 			<p>
-				<strong>3. Instrucciones para contestar el cuestionario:</strong><br>
 				Las preguntas abiertas pueden tener la extensión que considere necesaria.
 			</p>
 			
 			<p>
 				Cada una de las afirmaciones del cuestionario describen las mejores características que debe poseer un curso en línea.<br>
-				<i class="text-danger">Marque con la casilla correspondiente según la frecuencia o intensidad con la que se cumple esa afirmación. 
-				<br>Responda de acuerdo con la siguiente escala:</i>
+				<br>Marque la casilla correspondiente según la frecuencia o intensidad con la que se cumple esa afirmación. 
+				<br>Responda de acuerdo con la siguiente escala:
 			</p>
 			
-			<div class="columns pb-4">
-				<div class="row">
-					<div class="col">
-						1 - Muy en desacuerdo
-					</div>	
-					<div class="col">
-						2 - En desacuerdo
+			<div class="pb-4">
+			<div class="form-group text-center">
+					<span class="mr-2">Muy en desacuerdo</span>
+					<div class="form-check form-check-inline">					
+						<input class="form-check-input" type="radio" name="p3" id="p3-1" value="1" required>
+						<label class="form-check-label" for="p3-1">1</label>
 					</div>
-					<div class="col">
-						3 - No sé
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="p3" id="p3-2" value="2" required>
+						<label class="form-check-label" for="p3-2">2</label>
 					</div>
-					<div class="col">
-						4 - De acuerdo
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="p3" id="p3-3" value="3" required>
+						<label class="form-check-label" for="p3-3">3</label>
 					</div>
-					<div class="col">
-						5 - Muy de acuerdo
-					</div>				
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="p3" id="p3-4" value="4" required>
+						<label class="form-check-label" for="p3-4">4</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="p3" id="p3-5" value="5" required>
+						<label class="form-check-label" for="p3-5">5</label>
+					</div>
+					<span>Muy de acuerdo</span>
 				</div>
 			</div>
 			
