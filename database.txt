@@ -1,0 +1,40 @@
+alumnos
+-
+rut varchar(11)
+clave varchar(25)
+nombre varchar(50)
+carrera varchar(50)
+p1 varchar
+p2 varchar
+p3 int(1)
+p4 int(1)
+p5 int(1)
+p6 int(1)
+p7 int(1)
+p8 int(1)
+p9 int(1)
+p10 int(1)
+p11 int(1)
+p12 int(1)
+p13 int(1)
+p14 int(1)
+p15 int(1)
+p16 int(1)
+p17 int(1)
+p18 int(1)
+p19 int(1)
+p20 int(1)
+p21 int(1)
+p22 int(1)
+p23 int(1)
+p24 int(1)
+p25 int(1)
+sugerencia_calidad varchar
+sugerencia_metodologia varchar
+otros_comentarios varchar
+voto int(1)
+
+administradores
+-
+rut varchar(11)
+clave varchar(25)
